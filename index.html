@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Darlan Gomes Nóbrega | Nutrologia e Tricologia | Império Clinic</title>
+  <meta name="description" content="Consulta médica personalizada com o Dr. Darlan Gomes Nóbrega, especialista em Nutrologia e Tricologia na Império Clinic. Protocolos baseados em evidências, com formação no Hospital Israelita Albert Einstein." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── TOKENS ─── */
+    :root {
+      --navy:   #0D1F3C;
+      --navy2:  #1A3A6B;
+      --gold:   #C9A84C;
+      --gold2:  #E8C96A;
+      --white:  #FFFFFF;
+      --offwhite: #F7F8FA;
+      --grey:   #E8EAF0;
+      --text:   #1C2638;
+      --muted:  #6B7894;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-montserrat: 'Montserrat', sans-serif;
+      --ff-body:    'Inter', system-ui, sans-serif;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(13,31,60,.10);
+      --shadow-lg: 0 16px 40px rgba(13,31,60,.14), 0 4px 12px rgba(13,31,60,.08);
+    }
+
+    body {
+      font-family: var(--ff-body);
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1,h2,h3 { font-family: var(--ff-montserrat); line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 600; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; }
+    p  { line-height: 1.75; }
+
+    /* ─── UTILS ─── */
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .gold { color: var(--gold); }
+    .section { padding: 80px 0; }
+    .section--dark { background: var(--navy); color: var(--white); }
+    .section--offwhite { background: var(--offwhite); }
+
+    /* Pure-white sections get a subtle high-opacity radial highlight for depth */
+    .section--white {
+      position: relative;
+      background: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .section--white::before {
+      content: '';
+      position: absolute;
+      top: -180px; right: -160px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(201,168,76,.16) 0%, rgba(201,168,76,.05) 45%, transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .section--white::after {
+      content: '';
+      position: absolute;
+      bottom: -160px; left: -140px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(13,31,60,.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .section--white > .container { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 18px 0 28px;
+    }
+    .divider--center { margin: 18px auto 28px; }
+
+    /* ─── BUTTONS ─── */
+    @property --gradient-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @property --gradient-angle-offset {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @property --gradient-percent {
+      syntax: '<percentage>';
+      initial-value: 5%;
+      inherits: false;
+    }
+    @property --gradient-shine {
+      syntax: '<color>';
+      initial-value: #fff6df;
+      inherits: false;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    /* Shiny CTA — animated conic-gradient border + shimmer + dot pattern */
+    .btn--primary {
+      --shiny-bg: var(--gold);
+      --shiny-bg-end: var(--gold2);
+      --shiny-fg: var(--navy);
+      --shiny-highlight: #fff6df;
+      --shiny-highlight-subtle: rgba(255,255,255,.7);
+      --gradient-percent: 12%;
+      --duration: 3.2s;
+      --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+
+      isolation: isolate;
+      position: relative;
+      overflow: hidden;
+      outline-offset: 4px;
+      color: var(--shiny-fg);
+      background:
+        linear-gradient(135deg, var(--shiny-bg), var(--shiny-bg-end)) padding-box,
+        conic-gradient(
+          from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+          transparent,
+          var(--shiny-highlight) var(--gradient-percent),
+          var(--gradient-shine) calc(var(--gradient-percent) * 2),
+          var(--shiny-highlight) calc(var(--gradient-percent) * 3),
+          transparent calc(var(--gradient-percent) * 4)
+        ) border-box;
+      border: 2px solid transparent;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+      transition: var(--transition), transform .2s ease, box-shadow .2s ease;
+      transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine, transform, box-shadow;
+      animation: gradient-angle var(--duration) linear infinite;
+    }
+
+    /* Dot pattern, masked to a soft arc */
+    .btn--primary::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block-start: 50%;
+      translate: -50% -50%;
+      z-index: -1;
+      --size: calc(100% - 3px);
+      width: var(--size);
+      height: var(--size);
+      background: radial-gradient(
+        circle at 2px 2px,
+        rgba(13,31,60,.35) 0.6px,
+        transparent 0
+      ) padding-box;
+      background-size: 6px 6px;
+      background-repeat: space;
+      mask-image: conic-gradient(
+        from calc(var(--gradient-angle) + 45deg),
+        black,
+        transparent 10% 90%,
+        black
+      );
+      border-radius: inherit;
+      opacity: .35;
+    }
+
+    /* Shimmer sweep */
+    .btn--primary::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block-start: 50%;
+      translate: -50% -50%;
+      z-index: -1;
+      width: 140%;
+      aspect-ratio: 1;
+      background: linear-gradient(-50deg, transparent, rgba(255,255,255,.55), transparent);
+      mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+      opacity: .5;
+      animation: shimmer calc(var(--duration) * 1.4) linear infinite;
+    }
+
+    .btn--primary:hover,
+    .btn--primary:focus-visible {
+      --gradient-percent: 22%;
+      --gradient-angle-offset: 95deg;
+      --gradient-shine: var(--shiny-highlight-subtle);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,76,.45), inset 0 0 0 1px rgba(255,255,255,.4);
+    }
+
+    @keyframes gradient-angle {
+      to { --gradient-angle: 360deg; }
+    }
+    @keyframes shimmer {
+      to { rotate: 360deg; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn--primary { animation: none; }
+      .btn--primary::after { animation: none; }
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+    .btn--outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+    .btn-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100svh;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 60px 0 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(26,58,107,.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 1200px) {
+      .hero .container { max-width: 1320px; }
+      .hero__inner {
+        grid-template-columns: 1fr 0.78fr;
+        gap: 140px;
+      }
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .05em;
+      margin-bottom: 28px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 4px 16px rgba(0,0,0,.18);
+    }
+    .hero__badge svg { width: 14px; height: 14px; }
+    .hero__title { color: var(--white); margin-bottom: 22px; font-family: var(--ff-montserrat); }
+    .hero__title em { font-style: italic; color: var(--gold); font-family: var(--ff-display); }
+    .hero__sub {
+      color: rgba(255,255,255,.72);
+      font-size: 1.08rem;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero__cta-group { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .hero__authority {
+      margin-top: 44px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero__authority-icon {
+      width: 44px; height: 44px;
+      background: rgba(201,168,76,.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,168,76,.3);
+    }
+    .hero__authority-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .hero__authority-text { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+    .hero__authority-text strong { color: rgba(255,255,255,.9); font-weight: 500; display: block; }
+
+    /* Video */
+    .video-wrap {
+      aspect-ratio: 9/16;
+      max-height: 560px;
+      background: rgba(26,58,107,.5);
+      background-image: var(--bg-image, none);
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      border: 1px solid rgba(201,168,76,.25);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .video-element {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .video-wrap.is-playing .video-element {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .video-wrap.is-playing::before,
+    .video-wrap.is-playing .video-play,
+    .video-wrap.is-playing .video-label {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .video-play {
+      width: 72px; height: 72px;
+      background: rgba(201,168,76,.18);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: transform .2s, background .2s, opacity .3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .video-play:hover { transform: scale(1.08); background: rgba(201,168,76,.3); }
+    .video-play svg { width: 28px; height: 28px; color: var(--gold); margin-left: 4px; }
+    .video-label { color: rgba(255,255,255,.5); font-size: .82rem; text-align: center; letter-spacing: .04em; position: relative; z-index: 1; transition: opacity .3s ease; }
+    .video-label strong { color: rgba(255,255,255,.8); display: block; font-size: .9rem; margin-bottom: 4px; }
+
+    /* ─── DOR SECTION ─── */
+    .dor__intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+    .dor__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .dor__card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 24px 24px 28px;
+      border-left: 3px solid var(--gold);
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s cubic-bezier(.25,.8,.25,1), border-color .4s ease;
+    }
+    .dor__card:hover { transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-lg); border-left-color: var(--gold2); }
+    .dor__card-icon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .dor__card-icon svg { width: 17px; height: 17px; color: var(--gold); }
+    .dor__card-text { font-size: .95rem; line-height: 1.65; color: var(--text); }
+    .dor__callout {
+      margin-top: 48px;
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 36px 40px;
+      text-align: center;
+      color: rgba(255,255,255,.8);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+    .dor__callout strong { color: var(--gold); }
+
+    /* ─── CONSULTA SECTION ─── */
+    .consulta__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .consulta__points { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 28px 0 36px; }
+    .consulta__points li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: .97rem; line-height: 1.65;
+    }
+    .consulta__check {
+      width: 22px; height: 22px;
+      background: rgba(201,168,76,.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .consulta__check svg { width: 11px; height: 11px; color: var(--gold); }
+    .consulta__note {
+      background: var(--offwhite);
+      border-radius: 10px;
+      padding: 18px 20px;
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ─── SERVICES CARDS ─── */
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .srv-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--gold);
+      transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s cubic-bezier(.25,.8,.25,1), border-top-color .4s ease;
+    }
+    .srv-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: var(--shadow-lg); border-top-color: var(--gold2); }
+    .srv-card__icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      transition: background .4s ease, transform .4s cubic-bezier(.25,.8,.25,1);
+    }
+    .srv-card:hover .srv-card__icon { background: rgba(201,168,76,.18); transform: scale(1.08); }
+    .srv-card__icon svg { width: 24px; height: 24px; color: var(--gold); }
+    .srv-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .srv-card p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── BENEFICIOS ─── */
+    .beneficios__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .benef-item {
+      display: flex;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      transition: background .4s ease, transform .4s cubic-bezier(.25,.8,.25,1), border-color .4s ease;
+    }
+    .benef-item:hover { background: rgba(255,255,255,.09); transform: translateY(-3px) scale(1.02); border-color: rgba(201,168,76,.3); }
+    .benef-item__dot {
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .benef-item p { font-size: .95rem; color: rgba(255,255,255,.78); line-height: 1.65; }
+
+    /* ─── AUTORIDADE ─── */
+    .autoridade__inner {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .autoridade__photo {
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--navy2) 0%, var(--navy) 100%);
+      background-image: var(--bg-image, none);
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .autoridade__photo::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top, rgba(201,168,76,.15) 0%, transparent 60%);
+    }
+    .autoridade__photo-label {
+      color: rgba(255,255,255,.35);
+      font-size: .75rem;
+      text-align: center;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .autoridade__name {
+      font-family: var(--ff-montserrat);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .autoridade__spec {
+      font-size: .85rem;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: .05em;
+      margin-bottom: 24px;
+    }
+    .autoridade__text { font-size: .97rem; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .autoridade__tag-list {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+    }
+    .autoridade__tag {
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--grey);
+      font-size: .8rem;
+      color: var(--navy2);
+      font-weight: 500;
+    }
+
+    /* ─── CLINICA ─── */
+    .clinica {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .clinica::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .clinica__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .clinica__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .05em;
+      margin-bottom: 24px;
+    }
+    .clinica__title { color: var(--white); margin-bottom: 20px; }
+    .clinica__text {
+      color: rgba(255,255,255,.68);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+    .clinica__img {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,.04);
+      background-image: var(--bg-image, none);
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(201,168,76,.25);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .clinica__img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, transparent 60%);
+    }
+    .clinica__img-label {
+      color: rgba(255,255,255,.4);
+      font-size: .8rem;
+      text-align: center;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .clinica__ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(201,168,76,.4);
+      color: var(--white);
+      text-decoration: none;
+      font-size: .95rem;
+      font-weight: 500;
+      transition: border-color .3s ease, background .3s ease, transform .3s ease;
+    }
+    .clinica__ig:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,.1);
+      transform: translateY(-2px);
+    }
+    .clinica__ig svg { width: 18px; height: 18px; color: var(--gold); }
+
+    /* ─── METODO ─── */
+    .metodo__steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 48px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 24px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 25px; top: 52px;
+      width: 2px;
+      height: calc(100% + 0px);
+      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,.1));
+    }
+    .step__num {
+      width: 52px; height: 52px;
+      background: var(--navy);
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .step__body { padding: 12px 0 40px; }
+    .step__body h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .step__body p { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── PARA QUEM ─── */
+    .paraquem__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .pq-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 22px 22px 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      border-left: 3px solid transparent;
+      transition: border-color .4s ease, transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s cubic-bezier(.25,.8,.25,1);
+    }
+    .pq-card:hover { border-color: var(--gold); transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-lg); }
+    .pq-card__icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: rgba(201,168,76,.1);
+      border-radius: 10px;
+      transition: background .4s ease, transform .4s cubic-bezier(.25,.8,.25,1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pq-card__icon svg { width: 18px; height: 18px; color: var(--gold); }
+    .pq-card:hover .pq-card__icon { background: rgba(201,168,76,.18); transform: scale(1.08); }
+    .pq-card p { font-size: .93rem; line-height: 1.65; font-weight: 500; }
+
+    /* ─── DEPOIMENTOS ─── */
+    .depoimentos__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .depoimento-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s cubic-bezier(.25,.8,.25,1);
+    }
+    .depoimento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .depoimento-card__photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .depoimento-card__photo {
+      aspect-ratio: 3/4;
+      background: var(--offwhite);
+      background-image: var(--bg-image, none);
+      background-size: cover;
+      background-position: center;
+      border: 1px dashed var(--grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .depoimento-card__photo + .depoimento-card__photo {
+      border-left: none;
+    }
+    .depoimento-card__tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(13,31,60,.85);
+      color: var(--white);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+    .depoimento-card__photo-label {
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .depoimento-card__body { padding: 22px 24px; }
+    .depoimento-card__name { font-size: .98rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .depoimento-card__context { font-size: .8rem; color: var(--gold); font-weight: 500; margin-bottom: 12px; }
+    .depoimento-card__quote {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .depoimentos__note {
+      max-width: 680px;
+      margin: 40px auto 0;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 18px 24px;
+      background: var(--offwhite);
+      border-radius: 10px;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ─── EMOCIONAL ─── */
+    .emocional {
+      background: linear-gradient(135deg, var(--navy) 0%, #0a2347 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .emocional::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: radial-gradient(ellipse at top right, rgba(201,168,76,.12) 0%, transparent 60%);
+    }
+    .emocional__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .emocional__title {
+      color: var(--white);
+      font-family: var(--ff-montserrat);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+    .emocional__title em { color: var(--gold); font-style: italic; font-family: var(--ff-display); }
+    .emocional__text {
+      color: rgba(255,255,255,.72);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 44px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq__list { max-width: 760px; margin: 48px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--grey);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--grey); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color .2s;
+    }
+    .faq-q:hover { color: var(--navy2); }
+    .faq-q.open { color: var(--navy); }
+    .faq-arrow {
+      width: 28px; height: 28px;
+      background: rgba(201,168,76,.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform .3s, background .2s;
+    }
+    .faq-q.open .faq-arrow { transform: rotate(180deg); background: rgba(201,168,76,.2); }
+    .faq-arrow svg { width: 14px; height: 14px; color: var(--gold); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+    .faq-a p {
+      padding: 0 0 22px;
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─── CTA FINAL ─── */
+    .cta-final {
+      background: var(--navy);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,.08) 0%, transparent 70%);
+    }
+    .cta-final__inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-final__title { color: var(--white); margin-bottom: 20px; font-family: var(--ff-montserrat); }
+    .cta-final__sub { color: rgba(255,255,255,.65); font-size: 1.05rem; line-height: 1.8; margin-bottom: 44px; }
+    .cta-final__btn-wrap { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #07121F;
+      padding: 48px 0 100px;
+      color: rgba(255,255,255,.45);
+      font-size: .82rem;
+    }
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+    .footer__brand {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: .04em;
+    }
+    .footer__brand span { color: var(--gold); }
+    .footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .footer__links a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color .2s;
+    }
+    .footer__links a:hover { color: var(--gold); }
+    .footer__links a svg { width: 14px; height: 14px; }
+    .footer__divider { width: 40px; height: 1px; background: rgba(255,255,255,.1); }
+    .footer__disclaimer {
+      max-width: 580px;
+      text-align: center;
+      font-size: .78rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.3);
+    }
+
+
+
+    /* ─── SECTION HEADERS ─── */
+    .sec-header { text-align: center; max-width: 620px; margin: 0 auto; }
+    .sec-header p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-top: 16px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .video-wrap { display: none; }
+      .autoridade__inner { grid-template-columns: 1fr; gap: 40px; }
+      .autoridade__photo { aspect-ratio: 16/9; background-position: center 20%; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 60px 0; }
+      .hero { padding: 48px 0 60px; }
+      .hero__authority { flex-direction: column; text-align: center; }
+      .dor__callout { padding: 28px 20px; }
+      .metodo__steps { gap: 0; }
+    }
+
+    /* ─── MOBILE CENTERING ─── */
+    @media (max-width: 900px) {
+      /* Global text alignment */
+      .container { text-align: center; }
+
+      /* Hero */
+      .hero__badge { justify-content: center; }
+      .hero__sub { margin-left: auto; margin-right: auto; text-align: center; }
+      .hero__authority { align-items: center; text-align: center; }
+      .hero__authority-text { text-align: center; }
+
+      /* Section eyebrows & dividers */
+      .eyebrow { display: block; }
+      .divider { margin-left: auto; margin-right: auto; }
+
+      /* Consulta */
+      .consulta__points { text-align: left; }
+      .consulta__note { text-align: left; }
+
+      /* Dor cards */
+      .dor__card { text-align: left; }
+      .dor__callout { text-align: center; }
+
+      /* Serviços cards */
+      .srv-card { text-align: left; }
+
+      /* Benefícios */
+      .benef-item { text-align: left; }
+
+      /* Autoridade */
+      .autoridade__name { text-align: center; }
+      .autoridade__spec { text-align: center; }
+      .autoridade__text { text-align: center; }
+      .autoridade__tag-list { justify-content: center; }
+
+      /* Método steps */
+      .step__body { text-align: left; }
+
+      /* Para quem cards */
+      .pq-card { text-align: left; }
+
+      /* Emocional */
+      .emocional__inner { text-align: center; }
+
+      /* FAQ */
+      .faq-q { text-align: left; }
+      .faq-a p { text-align: left; }
+
+      /* Buttons centering */
+      .hero__cta-group { justify-content: center; width: 100%; }
+      .consulta__inner > div > .btn,
+      .emocional__inner > .btn { display: inline-flex; }
+      .consulta__inner { text-align: center; }
+
+      /* Step numbers alignment stays left-anchored inside grid */
+      .step { text-align: left; }
+    }
+
+    /* ─── WHITE TITLES: Montserrat ─── */
+    .hero__title,
+    .section--dark h2,
+    .emocional__title,
+    .cta-final__title {
+      font-family: var(--ff-montserrat);
+      font-style: normal;
+    }
+    /* Keep gold italic parts in Playfair */
+    .hero__title em,
+    .emocional__title em {
+      font-family: var(--ff-display);
+      font-style: italic;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+      .fade-in.visible { opacity: 1; transform: none; }
+      /* Higher-specificity overrides so hover zoom wins over the fade-in reset, only for explanatory cards */
+      .dor__card.fade-in.visible:hover { transform: translateY(-4px) scale(1.02); }
+      .srv-card.fade-in.visible:hover { transform: translateY(-5px) scale(1.02); }
+      .pq-card.fade-in.visible:hover { transform: translateY(-4px) scale(1.02); }
+      .benef-item.fade-in.visible:hover { transform: translateY(-3px) scale(1.02); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero__inner">
+
+      <!-- copy -->
+      <div class="fade-in">
+        <div class="hero__badge">
+          Nutrologia e Tricologia Médica
+        </div>
+
+        <h1 class="hero__title">
+          Seu corpo precisa de uma <em>estratégia</em>, não de mais uma tentativa.
+        </h1>
+
+        <p class="hero__sub">
+          A consulta médica com o Dr. Darlan é um acompanhamento individualizado para quem deseja emagrecer com saúde, ganhar massa magra, controlar alterações metabólicas, cuidar da saúde capilar e viver melhor, com diagnóstico preciso e condutas baseadas em ciência.
+        </p>
+
+        <div class="hero__cta-group">
+          <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" target="_blank" rel="noopener">
+            Agendar minha consulta
+          </a>
+        </div>
+
+        <div class="hero__authority">
+          <div class="hero__authority-text">
+            <strong>Formação e atualização contínua</strong>
+            Protocolos modernos desenvolvidos com base em estudos e discussões realizadas no Hospital Israelita Albert Einstein, referência nacional em medicina.
+          </div>
+        </div>
+      </div>
+
+      <!--
+        VÍDEO DE APRESENTAÇÃO
+        Esse card já está pronto para tocar um vídeo de verdade.
+
+        IMPORTANTE: o nome do arquivo de vídeo abaixo tem espaços, vírgulas
+        e acentos. Isso pode causar falha ao abrir a página em alguns
+        servidores ou ao hospedar online. O recomendado é renomear o
+        arquivo para algo simples, por exemplo:
+
+          assets/video/apresentacao-dr-darlan.mp4
+
+        e trocar o caminho dentro do "src" abaixo. Veja o LEIA-ME.txt
+        na pasta "assets" para instruções completas.
+      -->
+      <div class="video-wrap fade-in" id="heroVideoWrap">
+        <video
+          id="heroVideo"
+          class="video-element"
+          poster="assets/video-poster.jpg"
+          playsinline
+          controls
+        >
+          <source src="video-apresentacao.mp4" type="video/mp4">
+        </video>
+        <div class="video-play" id="heroVideoPlay" aria-label="Assistir apresentação">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="video-label" id="heroVideoLabel">
+          <strong>Conheça o Dr. Darlan</strong>
+          Clique aqui!
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── DOR ───────────────────────────────────────────────────── -->
+<section class="section section--offwhite" id="identificacao">
+  <div class="container">
+    <div class="dor__intro fade-in">
+      <span class="eyebrow">Você se identifica?</span>
+      <h2>Alguns sinais que o seu corpo pode estar enviando</h2>
+      <div class="divider divider--center"></div>
+    </div>
+
+    <div class="dor__grid">
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0 4.97 4.03 9 9 9s9-4.03 9-9-4.03-9-9-9"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <p class="dor__card-text">Você já tentou emagrecer diversas vezes e sempre volta ao mesmo ponto, sem entender por quê.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><path d="M12 2v10"/></svg>
+        </div>
+        <p class="dor__card-text">Você sente cansaço frequente, baixa disposição ou percebe queda de performance na rotina e nos treinos.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <p class="dor__card-text">Você percebe perda de força ou de massa muscular e tem dificuldade para progredir, mesmo treinando.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p class="dor__card-text">Seus exames mostram alterações no colesterol, triglicerídeos, glicemia ou resistência à insulina.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <p class="dor__card-text">Você sabe que precisa cuidar da saúde, mas não sabe por onde começar ou qual profissional procurar.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="dor__card-text">Você quer envelhecer com mais autonomia, funcionalidade e qualidade de vida, sem perder força nem independência.</p>
+      </div>
+      <div class="dor__card fade-in">
+        <div class="dor__card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6c-1.5 0-3 .8-3 2.5S10.5 12 12 14c1.5-2 3-4 3-5.5S13.5 6 12 6z"/></svg>
+        </div>
+        <p class="dor__card-text">Você percebe queda ou alterações capilares e suspeita que podem estar relacionadas à saúde geral ou deficiências nutricionais.</p>
+      </div>
+    </div>
+
+    <div class="dor__callout fade-in">
+      Esses sinais raramente aparecem de forma isolada. Na maioria das vezes, estão conectados ao metabolismo, à composição corporal, ao perfil hormonal, ao estilo de vida e às <strong>deficiências nutricionais</strong>. Entender essa relação é o ponto de partida para qualquer estratégia eficiente.
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CONSULTA ──────────────────────────────────────────────── -->
+<section class="section section--white" id="consulta">
+  <div class="container">
+    <div class="consulta__inner">
+
+      <div class="fade-in">
+        <div style="text-align:center;">
+          <span class="eyebrow">A consulta médica</span>
+          <h2>Uma avaliação completa, feita para você</h2>
+          <div class="divider divider--center"></div>
+        </div>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:24px;">
+          A consulta de Nutrologia com o Dr. Darlan não é uma consulta genérica. É um acompanhamento médico personalizado, que considera cada detalhe do seu histórico de saúde.
+        </p>
+        <ul class="consulta__points">
+          <li>
+            <div class="consulta__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Análise do histórico clínico e dos seus exames laboratoriais
+          </li>
+          <li>
+            <div class="consulta__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Avaliação de hábitos alimentares, rotina, composição corporal e objetivos individuais
+          </li>
+          <li>
+            <div class="consulta__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Construção de um plano de cuidado individualizado, baseado em evidências científicas
+          </li>
+          <li>
+            <div class="consulta__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Acompanhamento contínuo e ajustes ao longo da evolução de cada paciente
+          </li>
+        </ul>
+        <div class="consulta__note">
+          Quando indicado, a consulta pode ser integrada com nutricionista para fortalecer a estratégia e melhorar a adesão ao tratamento.
+        </div>
+        <div style="margin-top:32px; text-align:center;">
+          <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" target="_blank" rel="noopener">
+            Iniciar meu acompanhamento
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SERVIÇOS ──────────────────────────────────────────────── -->
+<section class="section section--offwhite" id="servicos">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <span class="eyebrow">Áreas de atuação</span>
+      <h2>Condições tratadas e acompanhadas</h2>
+      <p>Cada área exige diagnóstico específico, protocolos individualizados e acompanhamento contínuo. Conheça as principais condições tratadas pelo Dr. Darlan.</p>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Emagrecimento e Obesidade</h3>
+        <p>Avaliação das causas do excesso de peso, estratégias para perda de gordura com preservação de massa magra e acompanhamento a longo prazo.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <h3>Ganho de Massa Magra e Hipertrofia</h3>
+        <p>Estratégia médica para quem deseja ganhar músculo com mais eficiência, com análise de nutrição, composição corporal e exames.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+        </div>
+        <h3>Sarcopenia e Saúde do Idoso</h3>
+        <p>Prevenção e tratamento da perda de massa muscular relacionada à idade, com foco em funcionalidade, autonomia e qualidade de vida.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Lipedema</h3>
+        <p>Avaliação médica especializada do lipedema, com condutas que visam redução de sintomas, controle da progressão e melhora da qualidade de vida.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Resistência à Insulina e Síndrome Metabólica</h3>
+        <p>Diagnóstico e manejo de alterações metabólicas com risco cardiovascular, incluindo glicemia, triglicerídeos, HDL e pressão arterial.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><path d="M12 2v10"/></svg>
+        </div>
+        <h3>Fadiga e Baixa Disposição</h3>
+        <p>Identificação das causas por trás do cansaço crônico, da falta de energia e da queda de rendimento, com investigação laboratorial e clínica.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Saúde Capilar</h3>
+        <p>Avaliação nutricional e metabólica aplicada à queda de cabelo e alterações capilares, com abordagem médica integrada em Tricologia.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Deficiências Nutricionais</h3>
+        <p>Identificação e correção de carências de vitaminas, minerais e outros micronutrientes que afetam diretamente a saúde, energia e composição corporal.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Longevidade Saudável</h3>
+        <p>Estratégias baseadas em evidências para envelhecer com mais saúde, funcionalidade, vitalidade e prevenção de doenças crônicas.</p>
+      </div>
+
+      <div class="srv-card fade-in">
+        <div class="srv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+        </div>
+        <h3>Prevenção de Doenças Crônicas</h3>
+        <p>Avaliação de risco cardiovascular, metabólico e oncológico, com condutas para reduzir a probabilidade de doenças a longo prazo.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── BENEFÍCIOS ────────────────────────────────────────────── -->
+<section class="section section--dark" id="beneficios">
+  <div class="container">
+    <div class="sec-header fade-in" style="color:var(--white);">
+      <span class="eyebrow">O que o acompanhamento oferece</span>
+      <h2 style="color:var(--white);">Benefícios reais, com expectativas honestas</h2>
+      <p style="color:rgba(255,255,255,.6);">Cada paciente tem um histórico, exames e rotina próprios. Os benefícios a seguir refletem o que o acompanhamento médico pode contribuir, sem prometer resultados padronizados.</p>
+    </div>
+
+    <div class="beneficios__grid">
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Auxilia na perda de gordura corporal com foco em manutenção a longo prazo</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Contribui para melhora da composição corporal com preservação de massa magra</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Ajuda na preservação e no ganho de massa muscular com estratégia individualizada</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Pode melhorar os níveis de energia, disposição e performance no dia a dia</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Permite identificar deficiências nutricionais e alterações metabólicas antes que avancem</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Auxilia no controle de fatores de risco associados ao estilo de vida e ao metabolismo</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Favorece o envelhecimento com mais autonomia, funcionalidade e qualidade de vida</p>
+      </div>
+      <div class="benef-item fade-in">
+        <div class="benef-item__dot"></div>
+        <p>Oferece um plano construído para a sua rotina, seus exames e seus objetivos específicos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── AUTORIDADE ────────────────────────────────────────────── -->
+<section class="section section--white" id="sobre">
+  <div class="container">
+    <div class="autoridade__inner">
+
+      <!--
+        FOTO DO DR. DARLAN (seção "Sobre o médico")
+        Para trocar: altere o caminho dentro de url('...') abaixo.
+        Exemplo: --bg-image: url('assets/dr-darlan.jpg');
+      -->
+      <div class="autoridade__photo fade-in" style="--bg-image: url('img02.png');"></div>
+
+      <div class="fade-in">
+        <span class="eyebrow">Sobre o médico</span>
+        <div class="autoridade__name">Dr. Darlan Gomes Nóbrega</div>
+        <div class="autoridade__spec">Nutrologia e Tricologia Médica</div>
+        <div class="divider"></div>
+
+        <p class="autoridade__text">
+          O Dr. Darlan Gomes Nóbrega é médico especializado em Nutrologia e Tricologia, com atuação clínica voltada para o cuidado individualizado de pacientes que buscam uma abordagem médica completa sobre saúde, metabolismo, composição corporal e longevidade.
+        </p>
+        <p class="autoridade__text">
+          Sua prática clínica é orientada por protocolos modernos e atualizados, desenvolvidos a partir de estudos, discussões e formação continuada realizados no Hospital Israelita Albert Einstein, uma das maiores referências em medicina do Brasil.
+        </p>
+        <p class="autoridade__text">
+          Cada consulta é conduzida com escuta ativa, análise criteriosa dos exames e do histórico do paciente, e construção de um plano de cuidado que respeita a realidade, as limitações e os objetivos individuais de cada pessoa.
+        </p>
+
+        <div class="autoridade__tag-list">
+          <span class="autoridade__tag">Nutrologia</span>
+          <span class="autoridade__tag">Tricologia</span>
+          <span class="autoridade__tag">Medicina baseada em evidências</span>
+          <span class="autoridade__tag">Albert Einstein</span>
+          <span class="autoridade__tag">Medicina metabólica</span>
+          <span class="autoridade__tag">Longevidade</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CLÍNICA ───────────────────────────────────────────────── -->
+<section class="clinica" id="clinica">
+  <div class="container">
+    <div class="clinica__inner fade-in">
+      <div class="clinica__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1"/></svg>
+        Onde o atendimento acontece
+      </div>
+      <h2 class="clinica__title">Império Clinic</h2>
+      <p class="clinica__text">
+        As consultas com o Dr. Darlan Gomes Nóbrega são realizadas na Império Clinic, um espaço pensado para oferecer um atendimento médico acolhedor, organizado e à altura de cada paciente. Para acompanhar a rotina da clínica, conheça o perfil oficial no Instagram.
+      </p>
+      <!--
+        FOTO DA IMPÉRIO CLINIC
+        Para trocar: altere o caminho dentro de url('...') abaixo.
+      -->
+      <div class="clinica__img" style="--bg-image: url('imperio_clinic.jpeg');"></div>
+      <a href="https://www.instagram.com/_imperioclinic/" target="_blank" rel="noopener" class="clinica__ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @_imperioclinic
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── MÉTODO ────────────────────────────────────────────────── -->
+<section class="section section--offwhite" id="metodo">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <span class="eyebrow">O processo</span>
+      <h2>Como funciona o acompanhamento</h2>
+      <p>Do primeiro contato até o plano em execução, cada etapa foi pensada para garantir uma experiência organizada, segura e personalizada.</p>
+    </div>
+
+    <div class="metodo__steps">
+
+      <div class="step fade-in">
+        <div class="step__num">1</div>
+        <div class="step__body">
+          <h3>Primeiro contato com o Dr. Darlan</h3>
+          <p>Você entra em contato pelo WhatsApp ou pelo Instagram. O Dr. Darlan ou seu atendimento tira as dúvidas iniciais, explica como funciona a consulta e orienta o próximo passo.</p>
+        </div>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step__num">2</div>
+        <div class="step__body">
+          <h3>Agendamento da consulta</h3>
+          <p>Após o contato, agendamos a consulta em data e horário compatíveis com a sua rotina. Você recebe todas as informações para chegar preparado.</p>
+        </div>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step__num">3</div>
+        <div class="step__body">
+          <h3>Avaliação médica completa</h3>
+          <p>Na consulta, o Dr. Darlan realiza uma escuta detalhada sobre seu histórico de saúde, queixas, objetivos, rotina, alimentação e hábitos de vida.</p>
+        </div>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step__num">4</div>
+        <div class="step__body">
+          <h3>Análise de exames e composição corporal</h3>
+          <p>Os exames laboratoriais são avaliados com critério. Quando necessário, são solicitados exames complementares para uma visão mais completa do quadro clínico.</p>
+        </div>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step__num">5</div>
+        <div class="step__body">
+          <h3>Construção do plano individualizado</h3>
+          <p>Com base em tudo avaliado, é elaborado um plano de cuidado personalizado, com condutas médicas adaptadas à sua realidade, seus exames e seus objetivos.</p>
+        </div>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step__num">6</div>
+        <div class="step__body">
+          <h3>Acompanhamento e ajustes contínuos</h3>
+          <p>O acompanhamento é feito ao longo do tempo, com revisões periódicas para avaliar a evolução, ajustar condutas e garantir que o tratamento continue alinhado aos seus objetivos.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PARA QUEM ─────────────────────────────────────────────── -->
+<section class="section section--white" id="para-quem">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <span class="eyebrow">Indicações</span>
+      <h2>Para quem é indicada a consulta</h2>
+      <p>A consulta com o Dr. Darlan é voltada para adultos em diferentes fases da vida, com objetivos distintos, que buscam uma abordagem médica mais completa e personalizada.</p>
+    </div>
+
+    <div class="paraquem__grid">
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+        </div>
+        <p>Para quem deseja emagrecer com saúde, com estratégia médica e sem atalhos</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <p>Para quem quer ganhar massa muscular com acompanhamento e diagnóstico médico</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64"/><path d="M12 2v10"/></svg>
+        </div>
+        <p>Para quem sofre com fadiga, baixa disposição ou queda de rendimento sem causa aparente</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p>Para quem tem resistência à insulina, colesterol alterado, triglicerídeos ou síndrome metabólica</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p>Para idosos ou adultos que querem prevenir a perda de massa muscular e manter a autonomia</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <p>Para quem busca longevidade, mais qualidade de vida e prevenção de doenças crônicas</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+        </div>
+        <p>Para quem tem queixas capilares e suspeita que estão relacionadas à saúde nutricional ou metabólica</p>
+      </div>
+
+      <div class="pq-card fade-in">
+        <div class="pq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <p>Para quem quer cuidar da saúde de forma mais completa, com acompanhamento médico e plano personalizado</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── DEPOIMENTOS ───────────────────────────────────────────── -->
+<section class="section section--offwhite" id="depoimentos">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <span class="eyebrow">Resultados reais</span>
+      <h2>Pacientes que já passaram pelo acompanhamento</h2>
+      <p>Espaço reservado para fotos de antes e depois de pacientes que autorizaram o uso de sua imagem. Nenhuma foto ou depoimento é exibido sem consentimento expresso.</p>
+    </div>
+
+    <div class="depoimentos__grid">
+
+      <!--
+        FOTOS DO PACIENTE 1 (antes / depois)
+        Para trocar: altere o caminho dentro de url('...') de cada div abaixo.
+      -->
+      <div class="depoimento-card fade-in">
+        <div class="depoimento-card__photos">
+          <div class="depoimento-card__photo" style="--bg-image: url('bismark_antes.JPG');">
+            <span class="depoimento-card__tag">Antes</span>
+          </div>
+          <div class="depoimento-card__photo" style="--bg-image: url('bismark_depois.jpg');">
+            <span class="depoimento-card__tag">Depois</span>
+          </div>
+        </div>
+        <div class="depoimento-card__body">
+          <div class="depoimento-card__name">BISMARK</div>
+          <div class="depoimento-card__context">Período de acompanhamento: 60 DIAS</div>
+          <p class="depoimento-card__quote">O que mudou não foi somente o peso, mas sim, uma mudança de vida.</p>
+        </div>
+      </div>
+
+      <!-- FOTOS DO PACIENTE 2 (antes / depois) -->
+      <div class="depoimento-card fade-in">
+        <div class="depoimento-card__photos">
+          <div class="depoimento-card__photo" style="--bg-image: url('antonia_antes.JPG');">
+            <span class="depoimento-card__tag">Antes</span>
+          </div>
+          <div class="depoimento-card__photo" style="--bg-image: url('antonia_depois.jpeg');">
+            <span class="depoimento-card__tag">Depois</span>
+          </div>
+        </div>
+        <div class="depoimento-card__body">
+          <div class="depoimento-card__name">ANTONIA</div>
+          <div class="depoimento-card__context">Período de acompanhamento: 60 DIAS</div>
+          <p class="depoimento-card__quote">O mínimo que a gente leva desse procedimento, é uma melhora absurda na qualidade de vida.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="depoimentos__note">
+      Os resultados apresentados refletem casos individuais e podem variar de paciente para paciente, de acordo com histórico de saúde, adesão ao tratamento, exames e características pessoais. Todas as imagens e depoimentos exibidos nesta seção são publicados com autorização expressa dos pacientes.
+    </div>
+  </div>
+</section>
+
+
+<!-- ── EMOCIONAL ─────────────────────────────────────────────── -->
+<section class="emocional" id="mensagem">
+  <div class="container">
+    <div class="emocional__inner fade-in">
+      <span class="eyebrow">Uma perspectiva diferente</span>
+      <h2 class="emocional__title">
+        Cuidar do seu corpo não é questão de estética. É questão de <em>saúde, autonomia e tempo</em>.
+      </h2>
+      <p class="emocional__text">
+        Emagrecer, ganhar massa, controlar o metabolismo, preservar a força e cuidar da saúde capilar são conquistas que vão muito além da aparência. São expressões de saúde funcional, prevenção e qualidade de vida real.
+      </p>
+      <p class="emocional__text">
+        Cada quilo a menos pode significar menor risco cardiovascular. Cada quilo de músculo preservado representa mais independência ao longo dos anos. Cada deficiência identificada a tempo é uma doença que não precisou acontecer.
+      </p>
+      <p class="emocional__text">
+        A consulta médica é o ponto de partida para entender o que está por trás dos seus sintomas, do seu peso, da sua energia e da sua saúde. Com diagnóstico, acompanhamento e um plano feito para você.
+      </p>
+      <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" target="_blank" rel="noopener">
+        Quero agendar minha consulta
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
+<section class="section section--white" id="faq">
+  <div class="container">
+    <div class="sec-header fade-in">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas que a maioria dos pacientes faz</h2>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A consulta é apenas para emagrecimento?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Não. A Nutrologia abrange diversas áreas além do emagrecimento. A consulta pode incluir ganho de massa magra, controle metabólico, tratamento da fadiga, saúde do idoso, deficiências nutricionais, saúde capilar e estratégias de longevidade.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          O acompanhamento serve para ganho de massa muscular?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Sim. O Dr. Darlan avalia composição corporal, exames laboratoriais, nutrição e rotina para construir uma estratégia médica de ganho de massa magra, com base no que cada paciente realmente precisa.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A consulta pode ajudar em casos de sarcopenia?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Sim. A sarcopenia é uma das condições tratadas na consulta, com foco especial em idosos e adultos que apresentam perda progressiva de massa muscular. O acompanhamento inclui avaliação clínica, laboratorial e orientações individualizadas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Preciso levar exames para a consulta?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Se você possui exames recentes, trazê-los é bem-vindo e auxilia na avaliação inicial. Caso não tenha, não há problema. O Dr. Darlan pode solicitar os exames necessários durante ou após a consulta, conforme o quadro clínico de cada paciente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          O tratamento é igual para todos os pacientes?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Não. Cada plano é construído de forma individual, considerando histórico de saúde, exames, rotina, alimentação, objetivos e realidade de cada paciente. Não existe protocolo genérico no acompanhamento do Dr. Darlan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A consulta pode ser integrada com nutricionista?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Sim. Quando indicado, o acompanhamento nutricional com nutricionista pode ser integrado ao plano médico para fortalecer a estratégia alimentar e melhorar os resultados ao longo do tratamento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          A nutrologia também pode ajudar na saúde capilar?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Sim. Deficiências nutricionais e alterações metabólicas são causas frequentes de queda capilar e outras alterações dos fios. O Dr. Darlan atua em Tricologia médica com avaliação integrada, investigando essas relações de forma clínica e laboratorial.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Em quanto tempo vejo resultados?
+          <div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-a">
+          <p>Não é possível prever um prazo exato, pois os resultados dependem do histórico de saúde, da condição tratada, dos exames, da adesão ao plano e das necessidades individuais de cada paciente. O acompanhamento é contínuo e os ajustes são feitos ao longo da evolução de cada caso.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA FINAL ─────────────────────────────────────────────── -->
+<section class="cta-final" id="agendar">
+  <div class="container">
+    <div class="cta-final__inner fade-in">
+      <span class="eyebrow">Próximo passo</span>
+      <h2 class="cta-final__title">Sua saúde precisa de uma estratégia feita para você.</h2>
+      <p class="cta-final__sub">
+        Fale diretamente com o Dr. Darlan e agende sua consulta. O primeiro passo é simples: entre em contato pelo WhatsApp e ele mesmo cuida do restante.
+      </p>
+      <div class="cta-final__btn-wrap">
+        <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" target="_blank" rel="noopener">
+          Agendar consulta pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── RODAPÉ ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">Darlan <span>Nóbrega</span></div>
+      <div class="footer__links">
+        <a href="https://www.instagram.com/drdarlangnobrega/" target="_blank" rel="noopener" aria-label="Instagram do Dr. Darlan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/5583981353360" target="_blank" rel="noopener" aria-label="WhatsApp da clínica">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+      <div class="footer__divider"></div>
+      <p style="color:rgba(255,255,255,.2);font-size:.72rem;">© 2025 Dr. Darlan Nóbrega. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ── JS ────────────────────────────────────────────────────── -->
+<script>
+  // Hero video — click play to start playback inside the card
+  (function() {
+    const wrap = document.getElementById('heroVideoWrap');
+    const video = document.getElementById('heroVideo');
+    const playBtn = document.getElementById('heroVideoPlay');
+    if (!wrap || !video || !playBtn) return;
+
+    playBtn.addEventListener('click', () => {
+      wrap.classList.add('is-playing');
+      video.play().catch(() => {
+        // If playback fails (e.g. video file not added yet), revert to placeholder state
+        wrap.classList.remove('is-playing');
+      });
+    });
+
+    // If the visitor pauses or finishes the video, show the cover again
+    video.addEventListener('pause', () => wrap.classList.remove('is-playing'));
+    video.addEventListener('ended', () => wrap.classList.remove('is-playing'));
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        const ans = btn.nextElementSibling;
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
