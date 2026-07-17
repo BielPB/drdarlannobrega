@@ -532,6 +532,33 @@
       gap: 72px;
       align-items: center;
     }
+
+    /* Logo do Dr. Darlan como elemento de fundo, posicionada atrás da
+       foto (coluna esquerda do grid), bem sutil/transparente para dar
+       profundidade sem competir com o conteúdo. */
+    .autoridade__inner {
+      position: relative;
+    }
+    .autoridade__inner > .fade-in {
+      position: relative;
+      z-index: 1;
+    }
+    .autoridade__section-logo {
+      position: absolute;
+      left: -4%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      height: 180%;
+      max-width: none;
+      opacity: 0.14;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      object-fit: contain;
+      object-position: left center;
+    }
+
     .autoridade__photo {
       aspect-ratio: 3/4;
       background: linear-gradient(160deg, var(--navy2) 0%, var(--navy) 100%);
@@ -542,6 +569,7 @@
       display: flex; align-items: flex-end; justify-content: center;
       padding: 24px;
       position: relative;
+      z-index: 1;
       overflow: hidden;
     }
     .autoridade__photo::before {
@@ -978,6 +1006,7 @@
       .video-wrap { display: none; }
       .autoridade__inner { grid-template-columns: 1fr; gap: 40px; }
       .autoridade__photo { aspect-ratio: 16/9; background-position: center 20%; }
+      .autoridade__section-logo { display: none; }
     }
     @media (max-width: 600px) {
       .section { padding: 60px 0; }
@@ -1406,9 +1435,15 @@
     <div class="autoridade__inner">
 
       <!--
-        FOTO DO DR. DARLAN (seção "Sobre o médico")
+        LOGO DO DR. DARLAN (fundo, atrás da foto)
+        Elemento decorativo, bem sutil (opacidade baixa), posicionado
+        atrás da coluna da foto. Para trocar, altere o "src" abaixo.
+      -->
+      <img src="./logo_darlan.PNG" alt="Logo Dr. Darlan" class="autoridade__section-logo">
+
+      <!--
+        FOTO DO DR. DARLAN
         Para trocar: altere o caminho dentro de url('...') abaixo.
-        Exemplo: --bg-image: url('assets/dr-darlan.jpg');
       -->
       <div class="autoridade__photo fade-in" style="--bg-image: url('img02.png');"></div>
 
