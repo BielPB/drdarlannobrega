@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Darlan Nóbrega | Nutrologia e Tricologia em Campina Grande</title>
+  <meta name="description" content="Consulta presencial de Nutrologia e Tricologia com o Dr. Darlan Nóbrega, em Campina Grande - PB. Plano individual para emagrecer, ganhar massa e cuidar da saúde." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0D1F3C" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- SEO: as linhas marcadas com data-seo recebem o domínio no build (python3 build.py --domain https://seudominio.com.br).
+       Sem domínio, o build as remove. -->
+  <link rel="canonical" href="__SITE_URL__/" data-seo />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Dr. Darlan Gomes Nóbrega" />
+  <meta property="og:title" content="Dr. Darlan Gomes Nóbrega | Nutrologia e Tricologia" />
+  <meta property="og:description" content="Consulta médica presencial, individualizada e baseada em ciência. Império Clinic, Campina Grande - PB." />
+  <meta property="og:url" content="__SITE_URL__/" data-seo />
+  <meta property="og:image" content="__SITE_URL__/assets/og-image.jpg" data-seo />
+  <meta property="og:image:width" content="1200" data-seo />
+  <meta property="og:image:height" content="630" data-seo />
+  <meta property="og:image:alt" content="Dr. Darlan Gomes Nóbrega, médico nutrólogo e tricologista" data-seo />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="__SITE_URL__/assets/og-image.jpg" data-seo />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/playfair-display-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" as="image" type="image/avif" href="assets/darlan-1-480.avif" imagesrcset="assets/darlan-1-480.avif 480w, assets/darlan-1.avif 900w" imagesizes="(max-width: 960px) 92vw, 540px" fetchpriority="high" />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- TODO (métricas): colar aqui o snippet do GA4 e/ou Meta Pixel.
+       Os cliques nos botões de WhatsApp já enviam o evento "whatsapp_click" (veja o script no final). -->
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "url": "__SITE_URL__/",
+    "image": "__SITE_URL__/assets/darlan-2.webp",
+    "@type": "Physician",
+    "name": "Dr. Darlan Gomes Nóbrega",
+    "description": "Médico especialista em Nutrologia e Tricologia, com atendimento presencial e individualizado.",
+    "knowsAbout": ["Nutrologia", "Tricologia", "Emagrecimento", "Saúde metabólica", "Sarcopenia", "Longevidade"],
+    "telephone": "+5583981353360",
+    "sameAs": ["https://www.instagram.com/drdarlangnobrega/"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Otacílio Nepomuceno, 600 - Catolé",
+      "addressLocality": "Campina Grande",
+      "addressRegion": "PB",
+      "postalCode": "58410-160",
+      "addressCountry": "BR"
+    },
+    "priceRange": "R$ 800",
+    "makesOffer": { "@type": "Offer", "name": "Consulta presencial", "price": "800.00", "priceCurrency": "BRL" },
+    "worksFor": { "@type": "MedicalClinic", "name": "Império Clinic" }
+  }
+  </script>
+  <!-- TODO (SEO local): quando tiver os dados, acrescentar ao JSON-LD acima:
+       "openingHoursSpecification" (dias e horários) e "geo" (latitude/longitude da clínica). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "A consulta é presencial? Onde acontece?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. As consultas são presenciais e acontecem na Império Clinic, na R. Otacílio Nepomuceno, 600, no Catolé, em Campina Grande - PB."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A consulta é apenas para emagrecimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A Nutrologia abrange muito além do emagrecimento: ganho de massa magra, controle metabólico, tratamento da fadiga, saúde do idoso, deficiências nutricionais, saúde capilar e estratégias de longevidade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O acompanhamento serve para ganhar massa muscular ou tratar sarcopenia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O Dr. Darlan avalia composição corporal, exames, nutrição e rotina para construir uma estratégia médica de ganho de massa magra. A sarcopenia, perda progressiva de massa muscular, também é tratada, com foco especial em idosos e adultos que perdem força."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso levar exames para a consulta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se você tem exames recentes, leve-os: ajudam na avaliação inicial. Se não tiver, sem problema. O Dr. Darlan solicita os exames necessários durante ou após a consulta, conforme o seu quadro clínico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O tratamento é igual para todos os pacientes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Cada plano é construído de forma individual, considerando histórico de saúde, exames, rotina, alimentação, objetivos e realidade de cada paciente. Não existe protocolo genérico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A consulta pode ser integrada com nutricionista?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Quando indicado, o acompanhamento com nutricionista pode ser integrado ao plano médico para fortalecer a estratégia alimentar e melhorar a adesão ao longo do tratamento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A nutrologia também ajuda na saúde capilar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Deficiências nutricionais e alterações metabólicas são causas frequentes de queda de cabelo. O Dr. Darlan atua em Tricologia médica, investigando essas relações de forma clínica e laboratorial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Em quanto tempo vejo resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não é possível prever um prazo exato: depende do histórico, da condição tratada, dos exames e da adesão ao plano. O acompanhamento é contínuo e os ajustes são feitos ao longo da evolução de cada caso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual o valor da consulta e como agendar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A consulta presencial custa R$ 800,00. Formas de pagamento e horários disponíveis são informados pelo atendimento no WhatsApp. É só chamar, e você já sai com a consulta agendada."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrows-h" viewBox="0 0 24 24"><path d="m9 18-6-6 6-6"/><path d="m15 6 6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-ear" viewBox="0 0 24 24"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 10c0 3 2.5 5 5 5l1.2-1.2-1.8-1-.9.7c-.9-.4-1.6-1.1-2-2l.7-.9-1-1.8L9 10z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+<div class="announce" id="announce">
+  <a href="#clinica"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-map-pin"/></svg><span>Atendimento presencial em Campina Grande - PB</span><span class="hide-sm">·</span><b class="hide-sm">Ver endereço</b><svg class="icon hide-sm" width="14" height="14" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+</div>
+
+<!-- ── HEADER ───────────────────────────────────────────────── -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="header__brand" href="#inicio" aria-label="Dr. Darlan Nóbrega, início">
+      <img src="assets/logo-branca.png" alt="" width="38" height="38" />
+      <span>Darlan <b>Nóbrega</b></span>
+    </a>
+    <nav class="header__nav" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#areas">Áreas</a>
+      <a href="#metodo">Como funciona</a>
+      <a href="#clinica">Clínica</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary btn--sm" target="_blank" rel="noopener" data-cta="header"><span>Agendar<span class="hide-sm"> consulta</span></span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero__inner">
+
+      <div class="hero__copy">
+        <div class="hero__badge">
+          <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          Nutrologia e Tricologia · Campina Grande - PB
+        </div>
+
+        <h1 class="hero__title">
+          Nutrologia com <span class="nb"><em class="grad">método<svg class="scribble" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 48 2, 108 12, 217 4"/></svg></em>:</span> diagnóstico preciso e acompanhamento individual.
+        </h1>
+
+        <p class="hero__sub">
+          Consulta médica presencial, com análise dos seus exames e um plano de cuidado construído a partir da sua rotina, do seu histórico e dos seus objetivos.
+        </p>
+
+        <p class="hero__areas" aria-label="Áreas de atuação"><span>Emagrecimento</span><span>Massa magra</span><span>Saúde metabólica</span><span>Saúde capilar</span></p>
+
+        <div class="hero__cta-group">
+          <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary btn--lg" target="_blank" rel="noopener" data-cta="hero">
+            <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Agendar consulta
+          </a>
+          <a href="#metodo" class="btn btn--ghost btn--lg">Como funciona</a>
+        </div>
+
+        <ul class="hero__chips">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Consulta presencial</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Análise de exames</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Acompanhamento contínuo</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__stage">
+        <div class="orb" aria-hidden="true"></div>
+        <picture><source type="image/avif" srcset="assets/darlan-1-480.avif 480w, assets/darlan-1.avif 900w" sizes="(max-width: 960px) 92vw, 540px"><img class="hero__doctor" src="assets/darlan-1-480.webp" srcset="assets/darlan-1-480.webp 480w, assets/darlan-1.webp 900w" sizes="(max-width: 960px) 92vw, 540px" alt="Dr. Darlan Gomes Nóbrega, médico nutrólogo e tricologista, sorrindo com os braços cruzados" width="900" height="1352" fetchpriority="high" /></picture>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAIXA DE CONFIANÇA ───────────────────────────────────── -->
+<div class="trust">
+  <div class="container">
+    <div class="trust__card reveal">
+      <div class="trust__item"><span class="trust__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg></span>Presencial na Império Clinic, em Campina Grande - PB</div>
+      <div class="trust__item"><span class="trust__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span>Plano individual, sem protocolo genérico</div>
+      <div class="trust__item"><span class="trust__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span>Análise criteriosa dos seus exames</div>
+      <div class="trust__item"><span class="trust__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>Acompanhamento contínuo, com ajustes</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FAIXA DE ESPECIALIDADES ──────────────────────────────── -->
+<div class="marquee" role="group" aria-label="Condições acompanhadas">
+  <div class="marquee__track">
+    <ul><li>Emagrecimento</li><li>Ganho de massa magra</li><li>Saúde metabólica</li><li>Resistência à insulina</li><li>Saúde capilar</li><li>Sarcopenia</li><li>Longevidade</li><li>Deficiências nutricionais</li><li>Lipedema</li></ul>
+    <ul aria-hidden="true"><li>Emagrecimento</li><li>Ganho de massa magra</li><li>Saúde metabólica</li><li>Resistência à insulina</li><li>Saúde capilar</li><li>Sarcopenia</li><li>Longevidade</li><li>Deficiências nutricionais</li><li>Lipedema</li></ul>
+  </div>
+</div>
+
+<!-- ── IDENTIFICAÇÃO ────────────────────────────────────────── -->
+<section class="section section--identify pre-dark" id="identificacao">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="eyebrow">Você se identifica?</span>
+      <h2>Identifique o que <em>faz sentido</em> para você</h2>
+      <p>A consulta é indicada para adultos em diferentes fases da vida. Selecione o que se aplica ao seu caso e a mensagem ao Dr. Darlan já segue com esse contexto.</p>
+    </div>
+
+    <fieldset style="border:0">
+      <legend class="sr-only">Sinais e objetivos que você percebe</legend>
+      <div class="check-grid" id="checkGrid">
+
+        <p class="check-group">No corpo e no dia a dia</p>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="emagrecer de forma duradoura" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-scale"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Já tentei emagrecer várias vezes e sempre volto ao mesmo ponto</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="perda de força ou massa muscular" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-trend"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Perdi força ou massa muscular e não evoluo, mesmo treinando</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="cansaço e baixa disposição" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-zap"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Sinto cansaço frequente e baixa disposição na rotina</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="queda ou alterações no cabelo" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-sparkles"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Percebo queda ou alterações no cabelo e quero entender a causa</span>
+          </span>
+        </label>
+
+        <p class="check-group">Exames, saúde e futuro</p>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="exames alterados (colesterol, glicemia ou triglicerídeos)" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-flask"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Meus exames mostram colesterol, glicemia ou triglicerídeos alterados</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="suspeita de deficiência nutricional" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-activity"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Suspeito de deficiência de vitaminas ou outros nutrientes</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="longevidade e autonomia" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-shield"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Quero envelhecer com autonomia, força e qualidade de vida</span>
+          </span>
+        </label>
+
+        <label class="check-card reveal">
+          <input type="checkbox" value="não sei por onde começar" />
+          <span class="check-card__body">
+            <span class="check-card__top"><span class="check-card__icon"><svg class="icon" aria-hidden="true" width="24" height="24"><use href="#i-compass"/></svg></span><span class="check-card__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></span>
+            <span class="check-card__text">Sei que preciso cuidar da saúde, mas não sei por onde começar</span>
+          </span>
+        </label>
+
+
+      </div>
+    </fieldset>
+
+    <div class="check-action">
+      <p class="check-action__count" id="checkCount" role="status" aria-live="polite">Nenhum item selecionado. Você também pode falar direto com o Dr. Darlan.</p>
+      <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" id="checkCta" target="_blank" rel="noopener" data-cta="checklist">
+        <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        <span id="checkCtaLabel">Agendar minha consulta</span>
+      </a>
+    </div>
+
+    <p class="dor__callout reveal">
+      Esses sinais raramente aparecem isolados. Na maioria das vezes, estão ligados ao metabolismo, à composição corporal, ao perfil hormonal, ao estilo de vida e às <mark class="hl">deficiências nutricionais</mark>. Entender essa relação é o ponto de partida para qualquer estratégia eficiente.
+    </p>
+  </div>
+</section>
+
+<!-- ── ABORDAGEM ────────────────────────────────────────────── -->
+<section class="section section--dark section--approach" id="consulta">
+  <div class="container">
+    <div class="approach">
+
+      <div class="approach__copy">
+        <div class="reveal">
+          <span class="eyebrow">A consulta médica</span>
+          <h2>Uma avaliação completa, do diagnóstico ao acompanhamento</h2>
+          <p class="approach__lead">A consulta considera o seu histórico de saúde por inteiro: sintomas, exames, hábitos e objetivos.</p>
+        </div>
+
+        <ol class="pillars">
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">01</span>
+            <div><h3>Diagnóstico preciso</h3><p>Histórico clínico, exames laboratoriais, hábitos e rotina analisados em conjunto, para encontrar a causa e não apenas tratar o sintoma.</p></div>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">02</span>
+            <div><h3>Estratégia para o seu corpo</h3><p>Plano individualizado e baseado em evidências, com foco em composição corporal: perder gordura preservando massa magra.</p></div>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">03</span>
+            <div><h3>Acompanhamento contínuo</h3><p>Revisões periódicas e ajustes ao longo da evolução. Quando indicado, integração com nutricionista para fortalecer a adesão.</p></div>
+          </li>
+        </ol>
+
+        <p class="approach__note reveal">Cada paciente chega com um histórico, exames e uma rotina. Por isso o plano muda de pessoa para pessoa, e nenhum resultado é prometido de antemão.</p>
+        <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consulta%20com%20o%20Dr.%20Darlan." class="btn btn--primary" target="_blank" rel="noopener" data-cta="consulta">
+          <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Iniciar meu acompanhamento
+        </a>
+      </div>
+
+      <div class="approach__stage">
+        <div class="orb" aria-hidden="true"></div>
+        <picture><source type="image/avif" srcset="assets/darlan-4-480.avif 480w, assets/darlan-4.avif 900w" sizes="(max-width: 960px) 86vw, 470px"><img class="approach__doctor" src="assets/darlan-4-480.webp" srcset="assets/darlan-4-480.webp 480w, assets/darlan-4.webp 900w" sizes="(max-width: 960px) 86vw, 470px" alt="Dr. Darlan Gomes Nóbrega de perfil, em pose pensativa" width="900" height="1352" loading="lazy" /></picture>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ÁREAS DE ATUAÇÃO ─────────────────────────────────────── -->
+<section class="section section--alt" id="areas">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="eyebrow">Áreas de atuação</span>
+      <h2>Condições <em>tratadas</em> e acompanhadas</h2>
+      <p>Cada área exige diagnóstico específico, protocolos individualizados e acompanhamento contínuo.</p>
+    </div>
+
+    <div class="areas">
+
+      <article class="area-card area-card--featured reveal">
+        <div class="area-card__head">
+          <span class="area-card__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></span>
+          <div><span class="area-card__kicker">Área 01</span><h3>Emagrecimento e composição corporal</h3></div>
+        </div>
+        <p class="area-card__lead">Perda de gordura com preservação de massa magra e acompanhamento de longo prazo.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Emagrecimento e obesidade: avaliação das causas do excesso de peso</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Ganho de massa magra e hipertrofia, com análise de nutrição e exames</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><button type="button" class="term" data-tip="Acúmulo de gordura nas pernas e nos braços, desproporcional ao resto do corpo, em geral com dor e sensibilidade ao toque.">Lipedema</button>: condutas para reduzir sintomas e controlar a progressão</span></li>
+        </ul>
+        <a class="area-card__link" href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Dr.%20Darlan%20sobre%20emagrecimento%20e%20composi%C3%A7%C3%A3o%20corporal." target="_blank" rel="noopener" data-cta="area-01">
+          <span>Falar sobre isso</span><span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+      </article>
+      <article class="area-card reveal">
+        <div class="area-card__head">
+          <span class="area-card__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>
+          <div><span class="area-card__kicker">Área 02</span><h3>Saúde metabólica</h3></div>
+        </div>
+        <p class="area-card__lead">Diagnóstico e manejo de alterações com impacto cardiovascular.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><button type="button" class="term" data-tip="Quando as células respondem mal à insulina, o que favorece o aumento da glicemia.">Resistência à insulina</button> e <button type="button" class="term" data-tip="Conjunto de alterações (pressão, glicemia, gordura abdominal e colesterol) que aumenta o risco cardiovascular.">síndrome metabólica</button></span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Colesterol, triglicerídeos, glicemia e pressão arterial</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Prevenção de doenças crônicas: risco cardiovascular, metabólico e oncológico</span></li>
+        </ul>
+        <a class="area-card__link" href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Dr.%20Darlan%20sobre%20sa%C3%BAde%20metab%C3%B3lica." target="_blank" rel="noopener" data-cta="area-02">
+          <span>Falar sobre isso</span><span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+      </article>
+      <article class="area-card reveal">
+        <div class="area-card__head">
+          <span class="area-card__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+          <div><span class="area-card__kicker">Área 03</span><h3>Saúde capilar (Tricologia)</h3></div>
+        </div>
+        <p class="area-card__lead">Abordagem médica integrada, que olha para o cabelo e para o organismo.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Queda de cabelo e alterações dos fios</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Avaliação nutricional e metabólica como possível causa</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Investigação clínica e laboratorial integrada</span></li>
+        </ul>
+        <a class="area-card__link" href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Dr.%20Darlan%20sobre%20sa%C3%BAde%20capilar." target="_blank" rel="noopener" data-cta="area-03">
+          <span>Falar sobre isso</span><span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+      </article>
+      <article class="area-card reveal">
+        <div class="area-card__head">
+          <span class="area-card__icon tile"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+          <div><span class="area-card__kicker">Área 04</span><h3>Energia, idade e longevidade</h3></div>
+        </div>
+        <p class="area-card__lead">Investigação clínica e laboratorial para viver com mais disposição e autonomia.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Fadiga e baixa disposição: causas do cansaço crônico</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Deficiências nutricionais de vitaminas, minerais e micronutrientes</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><button type="button" class="term" data-tip="Perda progressiva de massa e de força muscular, comum com o envelhecimento.">Sarcopenia</button> e saúde do idoso: força, funcionalidade e independência</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Longevidade saudável baseada em evidências</span></li>
+        </ul>
+        <a class="area-card__link" href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Dr.%20Darlan%20sobre%20energia%2C%20idade%20e%20longevidade." target="_blank" rel="noopener" data-cta="area-04">
+          <span>Falar sobre isso</span><span class="go"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE ────────────────────────────────────────────────── -->
+<section class="section pre-dark" id="sobre">
+  <div class="container">
+    <div class="sobre">
+
+      <div class="sobre__photo reveal">
+        <div class="sobre__stage">
+          <div class="sobre__card" aria-hidden="true"></div>
+          <picture><source type="image/avif" srcset="assets/darlan-2-480.avif 480w, assets/darlan-2.avif 900w" sizes="(max-width: 960px) 380px, 420px"><img class="sobre__doctor" src="assets/darlan-2-480.webp" srcset="assets/darlan-2-480.webp 480w, assets/darlan-2.webp 900w" sizes="(max-width: 960px) 380px, 420px" alt="Dr. Darlan Gomes Nóbrega sorrindo, de blazer cinza" width="900" height="1352" loading="lazy" /></picture>
+        </div>
+        <div class="sobre__badge">
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          <div><strong>Império Clinic</strong>Campina Grande - PB</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">Sobre o médico</span>
+        <h2 class="sobre__name">Dr. Darlan Gomes Nóbrega</h2>
+        <div class="sobre__spec">NUTROLOGIA E TRICOLOGIA MÉDICA</div>
+
+        <p>
+          Médico especializado em Nutrologia e Tricologia, com atuação voltada ao cuidado individualizado de pacientes que buscam uma abordagem médica completa sobre saúde, metabolismo, composição corporal e longevidade.
+        </p>
+        <p>
+          Sua prática clínica é orientada por protocolos modernos e atualizados, desenvolvidos a partir de estudos, discussões e formação continuada realizados no Hospital Israelita Albert Einstein, uma das maiores referências em medicina do Brasil.
+        </p>
+
+        <p class="sobre__quote">Cada consulta começa pela escuta: histórico, rotina e exames lidos com calma antes de qualquer conduta.</p>
+
+        <ul class="principles">
+          <li ><span class="tile"><svg class="icon" aria-hidden="true"><use href="#i-ear"/></svg></span><strong>Escuta ativa</strong>Seu histórico e sua rotina vêm primeiro.</li>
+          <li ><span class="tile"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></span><strong>Exames com critério</strong>Cada resultado lido no seu contexto.</li>
+          <li ><span class="tile"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><strong>Plano que cabe em você</strong>Realidade, limites e objetivos.</li>
+        </ul>
+
+        <ul class="tags" aria-label="Áreas de atuação e formação">
+          <li>Nutrologia</li>
+          <li>Tricologia</li>
+          <li>Medicina baseada em evidências</li>
+          <li>Medicina metabólica</li>
+          <li>Longevidade</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── APRESENTAÇÃO (vídeo expande ao rolar) ────────────────── -->
+<section class="section--dark expand" id="apresentacao">
+  <div class="expand__pin">
+    <div class="container expand__stage">
+
+      <div class="expand__text expand__text--l">
+        <span class="eyebrow">Apresentação</span>
+        <h2>Conheça o Dr. Darlan antes da consulta</h2>
+        <p>Um vídeo de menos de 1 minuto para você conhecer o médico que vai conduzir o seu acompanhamento.</p>
+      </div>
+
+      <figure class="expand__card" id="expandCard" data-cursor="Assistir">
+        <img src="assets/video-poster.jpg" alt="Quadro do vídeo de apresentação do Dr. Darlan Gomes Nóbrega" width="506" height="900" loading="lazy" />
+        <!-- TODO (acessibilidade): quando houver o arquivo de legendas, adicionar dentro do <video>:
+             <track kind="captions" srclang="pt-BR" label="Português" src="assets/legenda.vtt" default> -->
+        <video id="expandVideo" playsinline controls preload="none" data-src="assets/apresentacao-dr-darlan.mp4" data-src-sm="assets/apresentacao-dr-darlan-sm.mp4" aria-label="Vídeo de apresentação do Dr. Darlan Gomes Nóbrega" poster="assets/video-poster.jpg"></video>
+        <button type="button" class="expand__play" id="expandPlay" aria-label="Assistir à apresentação do Dr. Darlan, 57 segundos">
+          <span aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
+        </button>
+        <figcaption class="expand__dur">0:57</figcaption>
+      </figure>
+
+      <div class="expand__text expand__text--r">
+        <dl class="expand__facts">
+          <div><dt>Médico</dt><dd>Dr. Darlan Gomes Nóbrega</dd></div>
+          <div><dt>Especialidade</dt><dd>Nutrologia e Tricologia</dd></div>
+          <div><dt>Atendimento</dt><dd>Presencial, na Império Clinic<br />Campina Grande - PB</dd></div>
+        </dl>
+        <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary btn--sm" target="_blank" rel="noopener" data-cta="apresentacao">
+          <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Agendar consulta
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESSO ─────────────────────────────────────────────── -->
+<section class="section section--alt" id="metodo">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="eyebrow">O processo</span>
+      <h2>Como funciona o <em>acompanhamento</em></h2>
+      <p>Do primeiro contato ao plano em execução: uma experiência organizada, segura e personalizada.</p>
+    </div>
+
+    <ol class="timeline" id="timeline">
+      <li class="tl-item reveal">
+        <span class="tl-node" aria-hidden="true">1</span>
+        <div class="tl-card"><h3>Contato e agendamento</h3><p>Você chama pelo WhatsApp, tira as dúvidas iniciais e agenda a consulta presencial em data e horário compatíveis com a sua rotina.</p></div>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-node" aria-hidden="true">2</span>
+        <div class="tl-card"><h3>Avaliação médica completa</h3><p>Escuta detalhada sobre histórico de saúde, queixas, objetivos, rotina, alimentação e hábitos de vida.</p></div>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-node" aria-hidden="true">3</span>
+        <div class="tl-card"><h3>Exames e plano individual</h3><p>Seus exames e sua composição corporal são analisados com critério e, se necessário, complementados. Daí nasce o plano feito para você.</p></div>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-node" aria-hidden="true">4</span>
+        <div class="tl-card"><h3>Acompanhamento e ajustes</h3><p>Revisões periódicas para avaliar a evolução, ajustar condutas e manter o tratamento alinhado aos seus objetivos.</p></div>
+      </li>
+    </ol>
+
+    <div class="section__cta reveal">
+      <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consulta%20com%20o%20Dr.%20Darlan." class="btn btn--outline" target="_blank" rel="noopener" data-cta="metodo">
+        <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        Começar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTADOS ───────────────────────────────────────────── -->
+<section class="section pre-dark" id="depoimentos">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="eyebrow">Pacientes acompanhados</span>
+      <h2>Pacientes em acompanhamento</h2>
+      <p>Imagens e relatos de pacientes que autorizaram a divulgação. Cada caso é individual.</p>
+    </div>
+
+    <p class="case__hint"><svg class="icon" aria-hidden="true"><use href="#i-arrows-h"/></svg>Arraste para comparar o antes e o depois</p>
+
+    <div class="cases">
+
+      <article class="case reveal">
+        <div class="compare skeleton" data-name="Bismarck" data-cursor="Arraste">
+          <picture><source type="image/avif" srcset="assets/bismark_depois-480.avif 480w, assets/bismark_depois.avif 720w" sizes="(max-width: 680px) 90vw, 480px"><img class="compare__img" src="assets/bismark_depois-480.webp" srcset="assets/bismark_depois-480.webp 480w, assets/bismark_depois.webp 720w" sizes="(max-width: 680px) 90vw, 480px" alt="Paciente Bismarck após 60 dias de acompanhamento, em foto de perfil" width="720" height="960" loading="lazy" /></picture>
+          <picture><source type="image/avif" srcset="assets/bismark_antes-480.avif 480w, assets/bismark_antes.avif 720w" sizes="(max-width: 680px) 90vw, 480px"><img class="compare__img compare__img--before" src="assets/bismark_antes-480.webp" srcset="assets/bismark_antes-480.webp 480w, assets/bismark_antes.webp 720w" sizes="(max-width: 680px) 90vw, 480px" alt="Paciente Bismarck antes do acompanhamento, em foto de perfil" width="720" height="960" loading="lazy" /></picture>
+          <span class="compare__tag compare__tag--l">Antes</span>
+          <span class="compare__tag compare__tag--r">Depois</span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do paciente Bismarck" />
+          <span class="compare__handle" aria-hidden="true"><span class="compare__knob"><svg class="icon"><use href="#i-arrows-h"/></svg></span></span>
+        </div>
+        <div class="case__body">
+          <div class="case__name">Bismarck</div>
+          <div class="case__context">60 dias de acompanhamento</div>
+          <p class="case__disc">Resultado individual. Os resultados variam de pessoa para pessoa.</p>
+          <p class="case__quote">“O que mudou não foi somente o peso, mas sim, uma mudança de vida.”</p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="compare skeleton" data-name="Antonia" data-cursor="Arraste">
+          <picture><source type="image/avif" srcset="assets/antonia_depois-480.avif 480w, assets/antonia_depois.avif 720w" sizes="(max-width: 680px) 90vw, 480px"><img class="compare__img" src="assets/antonia_depois-480.webp" srcset="assets/antonia_depois-480.webp 480w, assets/antonia_depois.webp 720w" sizes="(max-width: 680px) 90vw, 480px" alt="Paciente Antonia após 60 dias de acompanhamento" width="720" height="960" loading="lazy" /></picture>
+          <picture><source type="image/avif" srcset="assets/antonia_antes-480.avif 480w, assets/antonia_antes.avif 720w" sizes="(max-width: 680px) 90vw, 480px"><img class="compare__img compare__img--before" src="assets/antonia_antes-480.webp" srcset="assets/antonia_antes-480.webp 480w, assets/antonia_antes.webp 720w" sizes="(max-width: 680px) 90vw, 480px" alt="Paciente Antonia antes do acompanhamento, em foto de perfil" width="720" height="960" loading="lazy" /></picture>
+          <span class="compare__tag compare__tag--l">Antes</span>
+          <span class="compare__tag compare__tag--r">Depois</span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois da paciente Antonia" />
+          <span class="compare__handle" aria-hidden="true"><span class="compare__knob"><svg class="icon"><use href="#i-arrows-h"/></svg></span></span>
+        </div>
+        <div class="case__body">
+          <div class="case__name">Antonia</div>
+          <div class="case__context">60 dias de acompanhamento</div>
+          <p class="case__disc">Resultado individual. Os resultados variam de pessoa para pessoa.</p>
+          <p class="case__quote">“O mínimo que a gente leva desse procedimento, é uma melhora absurda na qualidade de vida.”</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note reveal">
+      Os resultados refletem casos individuais e variam conforme histórico de saúde, adesão ao tratamento, exames e características pessoais. Todas as imagens e depoimentos são publicados com autorização expressa dos pacientes.
+    </p>
+  </div>
+</section>
+
+<!-- ── CLÍNICA ──────────────────────────────────────────────── -->
+<section class="section section--dark" id="clinica">
+  <div class="container">
+    <div class="clinica">
+
+      <div class="reveal">
+        <span class="eyebrow">Onde o atendimento acontece</span>
+        <h2 class="clinica__title">Império Clinic</h2>
+        <p class="clinica__text">
+          As consultas são presenciais, em um espaço pensado para um atendimento médico acolhedor, organizado e à altura de cada paciente.
+        </p>
+
+        <address class="clinica__address">
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          <span>
+            <strong>Império Clinic</strong>
+            R. Otacílio Nepomuceno, 600 - Catolé<br />
+            Campina Grande - PB, 58410-160
+          </span>
+        </address>
+
+        <div class="clinica__actions">
+          <a href="https://www.google.com/maps/search/?api=1&query=R.+Otac%C3%ADlio+Nepomuceno%2C+600+-+Catol%C3%A9%2C+Campina+Grande+-+PB" class="btn btn--primary" target="_blank" rel="noopener" data-cta="como-chegar">
+            <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-map-pin"/></svg>
+            Como chegar
+          </a>
+          <a href="https://www.instagram.com/_imperioclinic/" class="btn btn--ghost" target="_blank" rel="noopener">
+            <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-instagram"/></svg>
+            @_imperioclinic
+          </a>
+        </div>
+      </div>
+
+      <div class="clinica__media reveal">
+        <figure class="clinica__shot skeleton">
+          <picture><source type="image/avif" srcset="assets/clinica.avif"><img src="assets/clinica.webp" alt="Recepção da Império Clinic, com balcão em pedra, painel de TVs e iluminação amadeirada" width="499" height="754" loading="lazy" /></picture>
+          <figcaption>Recepção</figcaption>
+        </figure>
+        <div class="clinica__map" id="mapBox" data-title="Mapa: Império Clinic, R. Otacílio Nepomuceno, 600, Catolé, Campina Grande - PB" data-src="https://maps.google.com/maps?q=R.+Otac%C3%ADlio+Nepomuceno%2C+600+-+Catol%C3%A9%2C+Campina+Grande+-+PB&amp;z=16&amp;output=embed">
+          <button type="button" class="map-facade" id="mapLoad">
+            <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+            <strong>Ver o mapa</strong>
+            <small>Carrega o Google Maps ao clicar</small>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────────────── -->
+<section class="section pre-dark" id="faq">
+  <div class="container">
+    <div class="faq">
+
+      <div class="faq__side reveal">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas que a maioria dos pacientes faz</h2>
+        <p>Se a sua dúvida não estiver aqui, é só chamar.</p>
+        <div class="faq__help">
+          <strong>Ainda com dúvida?</strong>
+          <p>Fale com o atendimento do Dr. Darlan e agende a sua consulta presencial.</p>
+          <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20consulta%20com%20o%20Dr.%20Darlan." class="btn btn--primary btn--sm" target="_blank" rel="noopener" data-cta="faq">
+            <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Tirar dúvida no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+            A consulta é presencial? Onde acontece?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a1"><div>
+            <p>Sim. As consultas são presenciais e acontecem na Império Clinic, na R. Otacílio Nepomuceno, 600, no Catolé, em Campina Grande - PB.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+            A consulta é apenas para emagrecimento?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a2"><div>
+            <p>Não. A Nutrologia abrange muito além do emagrecimento: ganho de massa magra, controle metabólico, tratamento da fadiga, saúde do idoso, deficiências nutricionais, saúde capilar e estratégias de longevidade.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            O acompanhamento serve para ganhar massa muscular ou tratar sarcopenia?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a3"><div>
+            <p>Sim. O Dr. Darlan avalia composição corporal, exames, nutrição e rotina para construir uma estratégia médica de ganho de massa magra. A sarcopenia, perda progressiva de massa muscular, também é tratada, com foco especial em idosos e adultos que perdem força.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            Preciso levar exames para a consulta?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a4"><div>
+            <p>Se você tem exames recentes, leve-os: ajudam na avaliação inicial. Se não tiver, sem problema. O Dr. Darlan solicita os exames necessários durante ou após a consulta, conforme o seu quadro clínico.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            O tratamento é igual para todos os pacientes?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a5"><div>
+            <p>Não. Cada plano é construído de forma individual, considerando histórico de saúde, exames, rotina, alimentação, objetivos e realidade de cada paciente. Não existe protocolo genérico.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            A consulta pode ser integrada com nutricionista?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a6"><div>
+            <p>Sim. Quando indicado, o acompanhamento com nutricionista pode ser integrado ao plano médico para fortalecer a estratégia alimentar e melhorar a adesão ao longo do tratamento.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+            A nutrologia também ajuda na saúde capilar?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a7"><div>
+            <p>Sim. Deficiências nutricionais e alterações metabólicas são causas frequentes de queda de cabelo. O Dr. Darlan atua em Tricologia médica, investigando essas relações de forma clínica e laboratorial.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+            Em quanto tempo vejo resultados?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a8"><div>
+            <p>Não é possível prever um prazo exato: depende do histórico, da condição tratada, dos exames e da adesão ao plano. O acompanhamento é contínuo e os ajustes são feitos ao longo da evolução de cada caso.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+            Qual o valor da consulta e como agendar?
+            <span class="faq-arrow" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a9"><div>
+            <p>A consulta presencial custa R$ 800,00. Formas de pagamento e horários disponíveis são informados pelo atendimento no WhatsApp. É só chamar, e você já sai com a consulta agendada.</p>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ────────────────────────────────────────────── -->
+<section class="section section--dark cta-final" id="agendar">
+  <div class="container">
+    <div class="cta-final__inner cta-card reveal">
+      <img class="cta-final__seal" src="assets/logo-ouro.png" alt="" width="52" height="52" loading="lazy" />
+      <span class="eyebrow">Próximo passo</span>
+      <h2>Cuidar da saúde exige <em class="grad">critério</em> e acompanhamento.</h2>
+      <p>
+        Agende uma consulta presencial para entender o que está por trás dos seus sintomas, do seu peso e da sua energia, e sair com um plano de cuidado feito para você.
+      </p>
+      <div class="cta-final__btns">
+        <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consulta%20presencial%20com%20o%20Dr.%20Darlan%20em%20Campina%20Grande." class="btn btn--primary btn--lg" target="_blank" rel="noopener" data-cta="cta-final">
+          <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Agendar consulta
+        </a>
+        <a href="#clinica" class="btn btn--ghost btn--lg">Ver endereço <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <ul class="cta-final__meta">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Presencial em Campina Grande - PB</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Agendamento direto pelo WhatsApp</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Consulta: R$ 800,00</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── RODAPÉ ───────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer__grid">
+
+      <div>
+        <div class="footer__brand">
+          <img src="assets/logo-branca.png" alt="" width="46" height="46" loading="lazy" />
+          <div>
+            <strong>Dr. Darlan Gomes Nóbrega</strong>
+            <span>Nutrologia e Tricologia Médica</span>
+          </div>
+        </div>
+        <!-- TODO: adicionar CRM-PB e RQE aqui quando disponíveis (exigência de publicidade médica). -->
+      </div>
+
+      <div>
+        <h3>Onde atendemos</h3>
+        <address>
+          Império Clinic<br />
+          R. Otacílio Nepomuceno, 600 - Catolé<br />
+          Campina Grande - PB, 58410-160<br />
+          Atendimento presencial
+        </address>
+        <!-- TODO: informar aqui o horário de atendimento (dias e horas) quando definido. -->
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <ul class="footer__links">
+          <li><a href="https://wa.me/5583981353360" target="_blank" rel="noopener" data-cta="footer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp (83) 98135-3360</a></li>
+          <li><a href="tel:+5583981353360" data-cta-call="footer"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Ligar (83) 98135-3360</a></li>
+          <li><a href="https://www.instagram.com/drdarlangnobrega/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>@drdarlangnobrega</a></li>
+          <li><a href="https://www.instagram.com/_imperioclinic/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>@_imperioclinic</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__legal">
+      <p>Este site tem caráter informativo e não substitui consulta médica. Os resultados variam de paciente para paciente.</p>
+      <p>© <span id="year">2026</span> Dr. Darlan Gomes Nóbrega. Todos os direitos reservados. · <a href="privacidade.html">Política de privacidade</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra fixa de conversão (mobile) e botão flutuante (desktop) -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" class="btn btn--primary" target="_blank" rel="noopener" data-cta="sticky-mobile">
+    <svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+</div>
+<a class="fab" id="fab" href="https://wa.me/5583981353360?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Darlan" target="_blank" rel="noopener" data-cta="fab" aria-label="Agendar consulta pelo WhatsApp">
+  <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Agendar consulta</span>
+</a>
+
+
+<script src="assets/app.js" defer></script>
+
+</body>
+</html>
